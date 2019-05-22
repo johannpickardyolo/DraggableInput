@@ -52,10 +52,21 @@ html, body {
 
 
 </head>
+
+
+
 <body>
     <div id="floating-panel">
-Put your control stuff HeatmapLayer
+Put your control stuff here
+<!---->
+<button id =mode1> Toggle</button>
+<button id =mode2> Toggle</button>
+<button id =mode3> Toggle</button>
+<button id =mode4> Toggle</button>
 </div>
+
+
+
 <div id="map"></div>
 <!-- Replace the value of the key parameter with your own API key. -->
 
@@ -76,46 +87,12 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 13,
     center: {lat: 37.775, lng: -122.434},
-    mapTypeId: 'satellite'
-  });
-
-  heatmap = new google.maps.visualization.HeatmapLayer({
-    data: getPoints(),
-    map: map
+    mapTypeId: 'satellite',
+     disableDefaultUI: true
   });
 }
 
-function toggleHeatmap() {
-  heatmap.setMap(heatmap.getMap() ? null : map);
-}
 
-function changeGradient() {
-  var gradient = [
-    'rgba(0, 255, 255, 0)',
-    'rgba(0, 255, 255, 1)',
-    'rgba(0, 191, 255, 1)',
-    'rgba(0, 127, 255, 1)',
-    'rgba(0, 63, 255, 1)',
-    'rgba(0, 0, 255, 1)',
-    'rgba(0, 0, 223, 1)',
-    'rgba(0, 0, 191, 1)',
-    'rgba(0, 0, 159, 1)',
-    'rgba(0, 0, 127, 1)',
-    'rgba(63, 0, 91, 1)',
-    'rgba(127, 0, 63, 1)',
-    'rgba(191, 0, 31, 1)',
-    'rgba(255, 0, 0, 1)'
-  ]
-  heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
-}
-
-function changeRadius() {
-  heatmap.set('radius', heatmap.get('radius') ? null : 20);
-}
-
-function changeOpacity() {
-  heatmap.set('opacity', heatmap.get('opacity') ? null : 1);
-}
 
 // Heatmap data: 500 Points
 
