@@ -1,0 +1,36 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+
+
+<!-- Latest Sortable -->
+<script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
+
+
+<!-- Simple List -->
+<div id="simpleList" class="list-group"></div>
+
+<style>
+#items li{
+    height: 20px;
+    border: 1px solid #000;
+}
+</style>
+
+
+<!--this is HTML that defines the list as we see it-->
+<!--the ID = items is used by the javascript to convert it into a sortable-->
+<!--UL means unordered list-->
+<ul id="items">
+	<li>Take photo of lock</li>
+	<li>Take photo of pool filter</li>
+	<li>Take photo of water level in tank</li>
+    <li>item 4</li>
+	<li>item 5</li>
+	<li>item 6</li>
+</ul>
+
+<script>
+    // does this script have to run after the ul is created
+    var el = document.getElementById('items');
+var sortable = Sortable.create(el);
+</script>
