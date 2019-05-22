@@ -113,6 +113,9 @@ initially it just has to bring up some options-->
     } else { // IE < 9
         document.attachEvent('oncontextmenu', function() {
             alert("You've tried to open context menu");
+            e.preventDefault();
+             toggleMenuOn();
+      positionMenu(e);
             window.event.returnValue = false;
         });
     }
