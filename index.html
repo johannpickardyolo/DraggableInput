@@ -13,14 +13,63 @@
 #items li{
     height: 20px;
     border: 1px solid #000;
+   /* Same as the width of the sidenav (take it away and they overlap) */
+    margin-left :  160px
 }
 </style>
+
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+
+dropdownMenuButton {
+margin-left: 100px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+
+
 
 
 <!--this is HTML that defines the list as we see it-->
 <!--the ID = items is used by the javascript to convert it into a sortable-->
 <!--UL means unordered list-->
-<ul id="items">
+
+<div id = "items">
+<ul id="item">
+    <!--I shoudl be able to add these, by clicking a botton, or from a list-->
 	<li>Take photo of lock</li>
 	<li>Take photo of pool filter</li>
 	<li>Take photo of water level in tank</li>
@@ -28,9 +77,31 @@
 	<li>item 5</li>
 	<li>item 6</li>
 </ul>
+</div>
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+
+
+
+
+<!--Side bar for navigation-->
+<div class="sidenav">
+
+</div>
+
+
 
 <script>
     // does this script have to run after the ul is created
-    var el = document.getElementById('items');
+    var el = document.getElementById('item');
 var sortable = Sortable.create(el);
 </script>
