@@ -68,7 +68,7 @@ html, body {
 <div id="map"></div>
 <!-- Replace the value of the key parameter with your own API key. -->
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&libraries=visualization&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrgGGbiHgV4n7ykSNmc8ZpxBv2HIbe2xg&libraries=visualization&callback=initMap">
     </script>
 
   <!-- TODO: Missing CoffeeScript 2 -->
@@ -128,22 +128,12 @@ function changeOpacity() {
   heatmap.set('opacity', heatmap.get('opacity') ? null : 1);
 }
 
+// Heatmap data: 500 Points
 
 
 
 //]]></script>
 
-  <script>
-    // tell the embed parent frame the height of the content
-    if (window.parent && window.parent.parent){
-      window.parent.parent.postMessage(["resultsFrame", {
-        height: document.body.getBoundingClientRect().height,
-        slug: "p8s6h4oe"
-      }], "*")
-    }
 
-    // always overwrite window.name, in case users try to set it manually
-    window.name = "result"
-  </script>
 </body>
 </html>
