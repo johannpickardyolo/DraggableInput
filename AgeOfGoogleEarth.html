@@ -47,6 +47,11 @@ html, body {
   width:100%;
   height :25%
 }
+
+
+
+
+
   </style>
 
 
@@ -77,6 +82,12 @@ initially it just has to bring up some options-->
         document.addEventListener('contextmenu', function(e) {
             alert("You've tried to open context menu"); //here you draw your own menu
             e.preventDefault();
+ toggleMenuOn();
+      positionMenu(e);
+
+
+
+
         }, false);
     } else { // IE < 9
         document.attachEvent('oncontextmenu', function() {
@@ -84,7 +95,32 @@ initially it just has to bring up some options-->
             window.event.returnValue = false;
         });
     }
+
+
+
+
+
+
+
+    
 </script>
+
+
+
+<!-- this is the html for the menu that wiil be created oin right click -->
+<div class="menu">
+  <ul class="menu-options">
+    <li class="menu-option">Back</li>
+    <li class="menu-option">Reload</li>
+    <li class="menu-option">Save</li>
+    <li class="menu-option">Save As</li>
+    <li class="menu-option">Inspect</li>
+  </ul>
+</div>
+
+
+
+
 
 <div id="map"></div>
 <!-- Replace the value of the key parameter with your own API key. -->
