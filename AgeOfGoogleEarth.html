@@ -59,13 +59,32 @@ html, body {
     <div id="floating-panel">
 Put your control stuff here
 <!--the idea here is to change between different states-->
-<button id =mode1> Toggle</button>
+<!--In toggle 1 you are in game play mode for example-->
+<button id =mode1> Point and click mode</button>
 <button id =mode2> Toggle</button>
 <button id =mode3> Toggle</button>
 <button id =mode4> Toggle</button>
 </div>
 
 
+<!--THis is the code that runs when I right click
+I want a menu to come up with actions
+initially it just has to bring up some options-->
+
+<!--I need to disable the normal on left click stuff coming up-->
+<script type="text/javascript">
+    if (document.addEventListener) { // IE >= 9; other browsers
+        document.addEventListener('contextmenu', function(e) {
+            alert("You've tried to open context menu"); //here you draw your own menu
+            e.preventDefault();
+        }, false);
+    } else { // IE < 9
+        document.attachEvent('oncontextmenu', function() {
+            alert("You've tried to open context menu");
+            window.event.returnValue = false;
+        });
+    }
+</script>
 
 <div id="map"></div>
 <!-- Replace the value of the key parameter with your own API key. -->
