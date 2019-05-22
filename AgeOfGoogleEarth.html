@@ -93,37 +93,23 @@ Put your control stuff here
 </div>
 
 
+<div class="menu">
+  <ul class="menu-options">
+    <li class="menu-option">Back</li>
+    <li class="menu-option">Reload</li>
+    <li class="menu-option">Save</li>
+    <li class="menu-option">Save As</li>
+    <li class="menu-option">Inspect</li>
+  </ul>
+</div>
+
+
 <!--THis is the code that runs when I right click
 I want a menu to come up with actions
 initially it just has to bring up some options-->
 
 <!--I need to disable the normal on left click stuff coming up-->
 <script type="text/javascript">
-    if (document.addEventListener) { // IE >= 9; other browsers
-        document.addEventListener('contextmenu', function(e) {
-            //alert("You've tried to open context menu"); //here you draw your own menu
-            e.preventDefault();
- toggleMenuOn();
-      positionMenu(e);
-
-
-
-
-        }, false);
-    } else { // IE < 9
-        document.attachEvent('oncontextmenu', function() {
-            alert("You've tried to open context menu");
-            e.preventDefault();
-             toggleMenuOn();
-      positionMenu(e);
-            window.event.returnValue = false;
-        });
-    }
-
-    
-
-
-
 
 const menu = document.querySelector(".menu");
 let menuVisible = false;
@@ -159,16 +145,7 @@ window.addEventListener("contextmenu", e => {
 
 
 
-<!-- this is the html for the menu that wiil be created oin right click -->
-<div class="menu">
-  <ul class="menu-options">
-    <li class="menu-option">Back</li>
-    <li class="menu-option">Reload</li>
-    <li class="menu-option">Save</li>
-    <li class="menu-option">Save As</li>
-    <li class="menu-option">Inspect</li>
-  </ul>
-</div>
+
 
 
 
